@@ -1,0 +1,33 @@
+.copyright {
+  position: relative;
+
+  display: inline-block;
+  padding-right: 40px;
+
+  vertical-align: middle;
+  text-decoration: none;
+
+  .font(@font-reg; 14px; 26px; @black);
+}
+
+.copyright__icon {
+  position: absolute;
+  top: -4px;
+  right: -35px;
+
+  .size(62; 62);
+  &:hover {
+    fill: @blue-hover;
+  }
+  &:active {
+    opacity: 0.3;
+
+    fill: @black;
+  }
+}
+
+@media @tablet-width {
+  .copyright__icon {
+    right: -35px;
+  }
+}

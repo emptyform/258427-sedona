@@ -1,0 +1,15 @@
+.font(@font-family: @font-reg; @font-size: 14px; @line-height: 21px; @color: @dark-gray) {
+  font-family: @font-family, "Arial", sans-serif;
+  font-size: @font-size;
+  line-height: @line-height;
+  color: @color;
+}
+
+.container(@margin: 20px) {
+  margin: 0 @margin;
+}
+
+.size(@x; @y) {
+  width: ~"@{x}px";
+  height: ~"@{y}px";
+}
