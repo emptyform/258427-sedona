@@ -52,6 +52,7 @@
 }
 
 .feedback__title {
+  display: block;
   margin: 0 auto;
 
   text-align: center;
@@ -93,7 +94,7 @@
   }
   &--contacts {
     flex-direction: column;
-    margin-bottom: 13px;
+    margin-bottom: -16px;
     &:last-of-type {
       margin-bottom: 0;
     }
@@ -254,7 +255,7 @@
   &--contacts-email::after {
     content: "";
     position: absolute;
-    top: 253px;
+    top: 223px;
     right: 0;
 
     display: block;
@@ -511,6 +512,7 @@
       .font(@font-bold; 30px; 26px; @black);
     }
     &--user-name {
+      text-align: left;
       margin: 0;
       margin-bottom: 57px;
       margin-left: 0;
@@ -525,6 +527,7 @@
       background-color: @white;
     }
     &--comment {
+      text-align: left;
       margin-bottom: 73px;
       margin-left: 0;
     }
