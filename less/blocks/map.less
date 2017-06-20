@@ -1,0 +1,46 @@
+.map {
+  position: relative;
+
+  min-height: 350px;
+
+  background-image: url("../img/bg-map-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+}
+
+.map__marker {
+  position: absolute;
+  top: 158px;
+  left: 45%;
+  z-index: 10;
+
+  width: 30px;
+  height: 30px;
+
+  background-image: url("../img/icon-map-marker.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  background-size: contain;
+}
+
+@media @tablet-width {
+  .map {
+    background-image: url("../img/bg-map-tablet.jpg");
+  }
+  .map__marker {
+    top: 163px;
+    left: 48%;
+  }
+}
+
+@media @desktop-width {
+  .map {
+    background-image: url("../img/bg-map-desktop.jpg");
+  }
+  .map__marker {
+    top: 162px;
+    left: 48.7%;
+  }
+}

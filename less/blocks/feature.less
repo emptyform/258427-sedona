@@ -1,0 +1,158 @@
+.feature {
+  &--without-img {
+    background-color: @light-gray;
+  }
+}
+
+.feature__header {
+  position: relative;
+
+  padding-top: 22px;
+  padding-bottom: 40px;
+
+  background-color: @blue;
+}
+
+.feature__img {
+  width: 100%;
+  height: 260px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  background-position: 51% 0;
+  background-size: cover;
+
+  &--city {
+    background-image: url("../img/photo-city.jpg");
+    @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+      background-image: url("../img/photo-city@2x.jpg");
+    }
+  }
+
+  &--bridge {
+    background-image: url("../img/photo-bridge.jpg");
+    @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+      background-image: url("../img/photo-bridge@2x.jpg");
+    }
+  }
+}
+
+.feature__title {
+  margin-bottom: 10px;
+
+  .font(@font-bold; 18px; 26px; @white);
+  &--without-img {
+    margin-top: 0;
+    margin-bottom: 9px;
+    padding-top: 27px;
+
+    color: @black;
+  }
+}
+
+.feature__num {
+  display: block;
+  margin-bottom: 14px;
+
+  color: @white;
+  &--without-img {
+    color: @dark-gray;
+  }
+}
+
+.feature__slogan {
+  margin: 0 20px;
+
+  color: @white;
+  &--without-img {
+    margin: 0 35px;
+    padding-bottom: 29px;
+
+    color: @dark-gray;
+  }
+}
+
+@media @mobile-width-only {
+  .word-wrap {
+    display: none;
+  }
+
+  .feature:first-of-type .feature__header {
+    padding-top: 38px;
+
+    background-image: url("../img/bg-triangle.svg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
+  }
+}
+
+@media @tablet-width {
+  .feature__header {
+    flex-basis: 33.3%;
+    padding-top: 45px;
+  }
+  .feature__img {
+    width: 66.7%;
+    height: 256px;
+  }
+  .feature__title {
+    margin: 0 52px;
+    margin-bottom: 10px;
+
+    font-size: 21px;
+    word-spacing: 0.05em;
+    &--without-img {
+      padding-top: 45px;
+    }
+  }
+  .feature__num {
+    margin-bottom: 21px;
+  }
+  .feature__slogan {
+    margin: 0 45px;
+    &--without-img {
+      margin: 0 50px;
+      padding-bottom: 43px;
+    }
+  }
+  .feature--without-img:nth-child(2) .feature__slogan {
+    margin: 0 55px;
+  }
+}
+
+@media @desktop-width {
+  .features__item {
+    &--reverse .feature__slogan {
+      margin: 0 85px;
+    }
+    &--without-img .feature__slogan {
+      padding-bottom: 63px;
+    }
+    &--without-img:nth-child(2) .feature__slogan {
+      margin: 0 60px;
+    }
+  }
+
+  .feature__header {
+    padding-top: 52px;
+  }
+
+  .feature__img {
+    background-size: auto;
+    &--city {
+      background-position: 50% 49%;
+    }
+    &--bridge {
+      background-position: 50% 53%;
+    }
+  }
+
+  .feature__title {
+    margin: 0 124px;
+    margin-bottom: 10px;
+  }
+  .feature__slogan {
+    margin: 0 60px;
+  }
+}

@@ -1,0 +1,30 @@
+.social-btn {
+  position: relative;
+
+  font-size: 0;
+
+  background-color: @blue;
+
+  .size(46; 48);
+  &:hover {
+    background-color: @blue-hover;
+  }
+  &:active {
+    background-color: @blue-active;
+  }
+  &:active .social-btn__icon {
+    opacity: 0.3;
+  }
+}
+
+.social-btn__icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  margin: auto;
+
+  fill: @white;
+}

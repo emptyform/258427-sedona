@@ -1,0 +1,50 @@
+.find-hotel {
+  text-align: center;
+}
+
+.find-hotel__title {
+  margin: 0;
+  margin-bottom: 19px;
+  padding-top: 27px;
+  .font(@font-bold; 21px; 26px; @black);
+}
+
+.find-hotel__desc {
+  margin: 0;
+  margin-bottom: 33px;
+  padding: 0 20px;
+  line-height: 24px;
+}
+
+.find-hotel__btn {
+  margin-bottom: 50px;
+}
+
+@media @mobile-width-only {
+  .find-hotel__desc .text-wrap {
+    display: none;
+  }
+}
+
+@media @tablet-width {
+  .find-hotel__title {
+    padding-top: 56px;
+    margin-bottom: 31px;
+    font-size: 30px;
+  }
+  .find-hotel__desc {
+    margin-bottom: 41px;
+  }
+  .find-hotel__btn {
+    margin-bottom: 59px;
+  }
+}
+
+@media @desktop-width {
+  .find-hotel__desc {
+    margin-bottom: 47px;
+  }
+  .find-hotel__btn {
+    margin-bottom: 66px;
+  }
+}

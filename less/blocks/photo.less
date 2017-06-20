@@ -1,0 +1,156 @@
+.photo {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.photo__link {
+  padding-top: 22px;
+
+  line-height: 0;
+
+  .container(20px);
+}
+
+
+.photo__desc {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+  padding-bottom: 17px;
+
+  .container(20px);
+}
+
+.photo__title {
+  margin-right: auto;
+
+  .font(@font-bold; 14px; 24px; @black);
+}
+
+.photo__author {
+  margin-bottom: 7px;
+
+  line-height: 24px;
+  text-transform: none;
+}
+
+.photo__likes {
+  padding-left: 35px;
+
+  .font(@font-bold; 14px; 24px; @black);
+}
+
+.photo__likes-icon {
+  position: absolute;
+  top: 69px;
+  left: 0;
+
+  cursor: pointer;
+  opacity: 0.3;
+}
+
+@media @tablet-width {
+  .photo__link {
+    padding: 0;
+
+    .container(0);
+  }
+
+  .photo__link img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .photo__desc {
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 324px;
+    margin: 0 auto;
+    padding-right: 20px;
+    padding-bottom: 9px;
+    padding-left: 20px;
+
+    background-color: @gray-input;
+  }
+
+  .photo:first-of-type .photo__desc {
+    width: 648px;
+  }
+
+  .photo__title {
+    flex-basis: 100%;
+  }
+
+  .photo__author {
+    flex-basis: auto;
+  }
+
+  .photo__likes {
+    position: relative;
+
+    margin-left: auto;
+
+    transform: translateY(-12px);
+  }
+  .photo:not(:first-of-type) .photo__likes {
+    padding-right: 10px;
+  }
+  .photo:nth-of-type(3) .photo__likes {
+    padding-right: 15px;
+  }
+
+  .photo__likes-icon {
+    top: 27px;
+    left: 238px;
+  }
+
+  .photo:first-of-type .photo__likes-icon {
+    left: 563px;
+  }
+}
+
+@media @desktop-width {
+  .photo__desc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    box-sizing: border-box;
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 22px;
+
+    color: @white;
+
+    background-color: rgba(0, 0, 0, 0.3);
+
+    .container(0);
+  }
+  .photo:first-of-type .photo__desc {
+    width: 100%;
+  }
+
+  .photo__title,
+  .photo__author,
+  .photo__likes {
+    color: inherit;
+  }
+
+  .photo__likes-icon {
+    top: 27px;
+    left: 314px;
+
+    opacity: 1;
+
+    fill: @white;
+  }
+
+  .photo:first-of-type .photo__likes-icon {
+    left: 1114px;
+  }
+}

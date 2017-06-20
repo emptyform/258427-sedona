@@ -1,0 +1,169 @@
+.main-nav {
+  padding-bottom: 55px;
+
+  background-color: @white;
+}
+
+.main-nav__list {
+  display: none;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  background-color: @blue;
+  &--no-js {
+    display: block;
+  }
+}
+
+.main-nav__item {
+  display: flex;
+  min-height: 55px;
+
+  text-align: center;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
+
+  &:first-child {
+    box-shadow: none;
+  }
+  &:last-child {
+    background-image: linear-gradient(to bottom, @blue 90%, rgba(0, 0, 0, 0.15));
+  }
+}
+
+.main-nav__link {
+  flex-basis: 100%;
+  margin: auto;
+
+  text-decoration: none;
+
+  .font(@font-bold; 18px; 55px; @white);
+
+  &:hover[href] {
+    background-color: @blue-hover;
+  }
+  &:active[href] {
+    color: rgba(255, 255, 255, 0.3);
+
+    background-color: @blue-active;
+  }
+}
+
+.main-nav__toggle {
+  outline: none;
+  position: absolute;
+  top: 16px;
+  right: 21px;
+
+  display: block;
+  width: 23px;
+  height: 23px;
+
+  font-size: 0;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 9px;
+    right: -3px;
+
+    width: 28px;
+    height: 4px;
+
+    background-color: @white;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+@media @mobile-width-only {
+  .main-nav__toggle--open::after {
+    content: none;
+
+    transform: none;
+  }
+  .main-nav__toggle--open::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 23px;
+    height: 4px;
+
+    background-color: @blue;
+    box-shadow: 0 8px 0 0 @blue,
+    0 16px 0 0 @blue;
+    transform: none;
+  }
+}
+
+
+
+@media @tablet-width {
+  .main-nav {
+    padding-bottom: 0;
+  }
+  .main-nav__list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 55px;
+
+    background-color: @white;
+  }
+  .main-nav__item {
+    width: 20%;
+
+    border: none;
+    box-shadow: none;
+    &:nth-child(3) {
+      margin-right: auto;
+    }
+    &:nth-child(4) {
+      margin-right: -2px;
+    }
+    &:last-child {
+      background-image: none;
+    }
+  }
+  .main-nav__link {
+    .font(@font-bold; 14px; 55px; @black);
+
+    &:hover[href] {
+      color: @blue;
+
+      background-color: @white;
+    }
+    &:active[href] {
+      color: @black;
+
+      opacity: 0.3;
+    }
+    &--active {
+      color: #766357;
+      &:hover {
+        color: #604e43;
+      }
+      &:active {
+        opacity: 0.3;
+      }
+    }
+  }
+  .main-nav__toggle {
+    display: none;
+  }
+}

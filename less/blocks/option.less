@@ -1,0 +1,71 @@
+.option {
+  position: relative;
+
+  padding-top: 23px;
+  padding-right: 20px;
+  padding-left: 70px;
+
+  text-align: left;
+}
+
+.option__icon {
+  position: absolute;
+
+  fill: @blue;
+
+  &--booking {
+    top: 12px;
+    left: 22px;
+
+    .size(37; 36);
+  }
+  &--souvenirs {
+    top: 11px;
+    left: 25px;
+
+    .size(32; 37);
+  }
+  &--food {
+    top: 18px;
+    left: 19px;
+
+    .size(38; 34);
+  }
+}
+
+.option__title {
+  margin: 0;
+  margin-bottom: 13px;
+
+  .font(@font-bold; 18px; 26px; @black);
+}
+
+.option__desc {
+  margin: 0;
+}
+
+@media @tablet-width {
+  .option {
+    padding: 0;
+    padding-top: 145px;
+
+    text-align: center;
+  }
+  .option__icon {
+    top: 45px;
+    right: 0;
+    left: 0;
+
+    margin: auto;
+
+    .size(75; 75);
+  }
+  .option__title {
+    margin-bottom: 20px;
+
+    font-size: 21px;
+  }
+  .option__desc {
+    margin: 0 45px;
+  }
+}
