@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Седона</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="css/style.min.css" rel="stylesheet">
   </head>
 
@@ -89,16 +90,20 @@
 
     <header class="page-header">
       <nav class="main-nav  page-header__main-nav">
-        <ul class="main-nav__list  main-nav__list--no-js">
+        <div class="main-nav__list  main-nav__list--no-js">
           <script>
             var navMenu = document.querySelector(".main-nav__list");
             navMenu.classList.remove('main-nav__list--no-js');
           </script>
-          <li class="main-nav__item  main-nav__item--active"><a class="main-nav__link  main-nav__link--active">Главная</a></li>
-          <li class="main-nav__item"><a class="main-nav__link" href="photo.html">Фото и видео</a></li>
-          <li class="main-nav__item"><a class="main-nav__link" href="form.html">Форма отзыва</a></li>
-          <li class="main-nav__item"><a class="main-nav__link" href="https://htmlacademy.ru">HTML academy</a></li>
-        </ul>
+          <ul class="main-nav__item-wrap  main-nav__item-wrap--left">
+            <li class="main-nav__item"><a class="main-nav__link  main-nav__link--active">Главная</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="photo.html">Фото и видео</a></li>
+          </ul>
+          <ul class="main-nav__item-wrap  main-nav__item-wrap--right">
+            <li class="main-nav__item"><a class="main-nav__link" href="form.html">Форма отзыва</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="https://htmlacademy.ru">HTML academy</a></li>
+          </ul>
+        </div>
         <button class="main-nav__toggle  main-nav__toggle--open" type="button">Закрыть меню</button>
       </nav>
       <a class="page-header__logo">
@@ -136,7 +141,7 @@
               <use xlink:href="#icon-gift" />
             </svg>
             <h4 class="option__title">Сувениры</h4>
-            <p class="option__desc">Не только китайского,<br class="text-wrap"> но и местного производства!</p>
+            <p class="option__desc">Не только китайского, но&nbsp;и местного производства!</p>
           </div>
           <div class="option  features__options-item">
             <svg class="option__icon option__icon--food" height="34" width="38">
@@ -158,7 +163,7 @@
           <div class="feature  feature--without-img  features__item  features__item--without-img">
             <h3 class="feature__title  feature__title--without-img">Небольшая площадь</h3>
             <span class="feature__num  feature__num--without-img">&#8211; №3 &#8211;</span>
-            <p class="feature__slogan  feature__slogan--without-img">Все&nbsp;достопримеча<span class="word-wrap">-<br></span>тельности находятся очень близко</p>
+            <p class="feature__slogan  feature__slogan--without-img">Все интересные места находятся очень близко</p>
           </div>
           <div class="feature  feature--without-img  features__item  features__item--without-img">
             <h3 class="feature__title  feature__title--without-img">Красивая дорога</h3>
@@ -174,7 +179,7 @@
       </section>
       <section class="find-hotel">
         <h2 class="find-hotel__title">Заинтересовались?</h2>
-        <p class="find-hotel__desc">Укажите предполагаемые даты поездки,<br class="text-wrap"> и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+        <p class="find-hotel__desc">Укажите предполагаемые даты поездки, и&nbsp;мы&nbsp;покажем&nbsp;вам&nbsp;лучшие предложения гостиниц в Седоне</p>
         <a class="btn  btn--search  find-hotel__btn" href="search-results.html">Найти гостиницу</a>
       </section>
       <div class="map">
@@ -211,8 +216,8 @@
       </div>
     </footer>
 
-    <script src="js/main-nav.js"></script>
-    <script src="js/map.js"></script>
+    <script src="js/main-nav.min.js"></script>
+    <script src="js/map.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmGNBnvuAygbHd-ednKmOhjJDMREdjs7s&callback=initMap" async
       defer></script>
   </body>

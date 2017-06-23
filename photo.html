@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Седона-Фото и видео</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="css/style.min.css" rel="stylesheet">
   </head>
 
@@ -53,16 +54,21 @@
 
     <header class="page-header">
       <nav class="main-nav  page-header__main-nav">
-        <ul class="main-nav__list  main-nav__list--no-js">
+        <div class="main-nav__list  main-nav__list--no-js">
           <script>
             var navMenu = document.querySelector(".main-nav__list");
             navMenu.classList.remove('main-nav__list--no-js');
           </script>
-          <li class="main-nav__item  main-nav__item--active"><a class="main-nav__link" href="index.html">Главная</a></li>
-          <li class="main-nav__item"><a class="main-nav__link  main-nav__link--active">Фото и видео</a></li>
-          <li class="main-nav__item"><a class="main-nav__link" href="form.html">Форма отзыва</a></li>
-          <li class="main-nav__item"><a class="main-nav__link" href="https://htmlacademy.ru">HTML academy</a></li>
-        </ul>
+          <ul class="main-nav__item-wrap  main-nav__item-wrap--left">
+            <li class="main-nav__item"><a class="main-nav__link" href="index.html">Главная</a></li>
+            <li class=" main-nav__item "><a class="main-nav__link  main-nav__link--active">Фото и видео</a>
+            </li>
+          </ul>
+          <ul class="main-nav__item-wrap  main-nav__item-wrap--right">
+            <li class="main-nav__item"><a class="main-nav__link" href="form.html">Форма отзыва</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="https://htmlacademy.ru">HTML academy</a></li>
+          </ul>
+        </div>
         <button class="main-nav__toggle  main-nav__toggle--open" type="button">Открыть меню</button>
       </nav>
       <a class="page-header__logo" href="index.html">
@@ -82,8 +88,8 @@
         <div class="photo  photo-box__item">
           <a class="photo__link" href="#">
             <picture>
-              <source media="(min-width: 1200px)" srcset="img/photo-1-desktop.jpg, img/photo-1-desktop@2x.jpg 2x">
-              <source media="(min-width: 768px)" srcset="img/photo-1-tablet.jpg, img/photo-1-tablet@2x.jpg 2x">
+              <source media="(min-width: 1200px)" srcset="img/photo-1-desktop.jpg 1x, img/photo-1-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/photo-1-tablet.jpg 1x, img/photo-1-tablet@2x.jpg 2x">
               <img src="img/photo-1-mobile.jpg" srcset="img/photo-1-mobile@2x.jpg 2x" alt="sedona-photo-1">
             </picture>
           </a>
@@ -99,8 +105,8 @@
         <div class="photo  photo-box__item">
           <a class="photo__link" href="#">
             <picture>
-              <source media="(min-width: 1200px)" srcset="img/photo-2-desktop.jpg, img/photo-2-desktop@2x.jpg 2x">
-              <source media="(min-width: 768px)" srcset="img/photo-2-tablet.jpg, img/photo-2-tablet@2x.jpg 2x">
+              <source media="(min-width: 1200px)" srcset="img/photo-2-desktop.jpg 1x, img/photo-2-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/photo-2-tablet.jpg 1x, img/photo-2-tablet@2x.jpg 2x">
               <img src="img/photo-2-mobile.jpg" srcset="img/photo-2-mobile@2x.jpg 2x" alt="sedona-photo-2">
             </picture>
           </a>
@@ -116,8 +122,8 @@
         <div class="photo  photo-box__item">
           <a class="photo__link" href="#">
             <picture>
-              <source media="(min-width: 1200px)" srcset="img/photo-3-desktop.jpg, img/photo-3-desktop@2x.jpg 2x">
-              <source media="(min-width: 768px)" srcset="img/photo-3-tablet.jpg, img/photo-3-tablet@2x.jpg 2x">
+              <source media="(min-width: 1200px)" srcset="img/photo-3-desktop.jpg 1x, img/photo-3-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/photo-3-tablet.jpg 1x, img/photo-3-tablet@2x.jpg 2x">
               <img src="img/photo-3-mobile.jpg" srcset="img/photo-3-mobile@2x.jpg 2x" alt="sedona-photo-3">
             </picture>
           </a>
@@ -133,8 +139,8 @@
         <div class="photo  photo-box__item">
           <a class="photo__link" href="#">
             <picture>
-              <source media="(min-width: 1200px)" srcset="img/photo-4-desktop.jpg, img/photo-4-desktop@2x.jpg 2x">
-              <source media="(min-width: 768px)" srcset="img/photo-4-tablet.jpg, img/photo-4-tablet@2x.jpg 2x">
+              <source media="(min-width: 1200px)" srcset="img/photo-4-desktop.jpg 1x, img/photo-4-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/photo-4-tablet.jpg 1x, img/photo-4-tablet@2x.jpg 2x">
               <img src="img/photo-4-mobile.jpg" srcset="img/photo-4-mobile@2x.jpg 2x" alt="sedona-photo-4">
             </picture>
           </a>
@@ -197,7 +203,7 @@
       </div>
     </footer>
 
-    <script src="js/main-nav.js"></script>
+    <script src="js/main-nav.min.js"></script>
 
   </body>
 
