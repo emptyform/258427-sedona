@@ -2,8 +2,8 @@ var map = document.querySelector('.map');
 
 
 function initMap() {
-  var positionSedona = new google.maps.LatLng(34.86973, -111.76098);
-  var markerPosition = new google.maps.LatLng(34.774435, -111.775902);
+  var positionSedona = new google.maps.LatLng(34.87630, -111.71100);
+  var markerPosition = new google.maps.LatLng(34.748435, -111.735902);
 
   var mapOptions = {
     center: positionSedona,

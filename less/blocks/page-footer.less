@@ -26,25 +26,53 @@
 
 @media @tablet-width {
   .page-footer {
+    .container(60px);
     display: flex;
-    justify-content: space-around;
+    // flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
   }
   .page-footer__hashtag {
+    flex-basis: 10%;
     margin-top: -10px;
-    margin-right: -10px;
+    margin-right: -5px;
   }
   .page-footer__social {
-    margin-right: 0;
+    display: flex;
+    flex-basis: 80%;
+    margin-bottom: 44px;
   }
   .page-footer__copyright {
+    flex-basis: 10%;
     margin-top: -45px;
+    margin-right: 0px;
   }
 }
 
 @media @desktop-width {
+  .page-footer {
+    padding-bottom: 0;
+    padding-left: 132px;
+    padding-right: 38px;
+    .container(0);
+  }
+  .page-footer__hashtag {
+    margin-right: 0;
+    // margin-left: 120px;
+    // flex-basis: 18.5%;
+    margin-top: -4px;
+  }
+  .page-footer__social {
+    margin-bottom: 37px;
+    // margin-right: 20px;
+    flex-basis: 64.5%;
+  }
   .page-footer__copyright {
-    position: relative;
-    left: 7.5%;
+    // position: relative;
+    // left: 7.5%;
+    margin-left: auto;
+    // margin-right: -50px;
+    // flex-basis: 10%;
+    margin-top: -37px;
   }
 }

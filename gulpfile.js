@@ -7,6 +7,7 @@ var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var server = require("browser-sync").create();
 var mqpacker = require("css-mqpacker");
+var jsmin = require('gulp-jsmin');
 var minify = require("gulp-csso");
 var rename = require("gulp-rename");
 var imagemin = require("gulp-imagemin");
@@ -31,16 +32,26 @@ gulp.task("style", function () {
         sort: true
       })
     ]))
-    .pipe(gulp.dest("css"))
+    .pipe(gulp.dest("build/css"))
     .pipe(minify())
     .pipe(rename("style.min.css"))
-    .pipe(gulp.dest("css"))
+    .pipe(gulp.dest("build/css"))
     .pipe(server.stream());
+});
+
+gulp.task("html:copy", function () {
+  return gulp.src("*.html")
+    .pipe(gulp.dest("build"));
+});
+
+gulp.task("html:update", ["html:copy"], function (done) {
+  server.reload();
+  done();
 });
 
 gulp.task("serve", function () {
   server.init({
-    server: ".",
+    server: "build/",
     notify: false,
     open: true,
     cors: true,
@@ -48,7 +59,7 @@ gulp.task("serve", function () {
   });
 
   gulp.watch("less/**/*.less", ["style"]);
-  gulp.watch("*.html").on("change", server.reload);
+  gulp.watch("*.html", ["html:update"]);
 });
 
 gulp.task("images", function () {
@@ -62,7 +73,7 @@ gulp.task("images", function () {
 });
 
 gulp.task("symbols", function () {
-  return gulp.src("img/*.svg")
+  return gulp.src("build/img/*.svg")
     .pipe(svgmin())
     .pipe(svgstore({
       inlineSvg: true
@@ -71,16 +82,18 @@ gulp.task("symbols", function () {
     .pipe(gulp.dest("build/img"));
 });
 
-gulp.task("build", function (fn) {
-  run("clean", "copy", "style", "images", "symbols", fn);
+gulp.task('jsmin', function () {
+  gulp.src('build/js/*.js')
+    .pipe(jsmin())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest('build/js'));
 });
 
 gulp.task("copy", function () {
   return gulp.src([
-    "fonts/**/*.{woff, woff2}",
+    "fonts/**/*.{woff,woff2}",
     "img/**",
     "js/**",
-    "css/**",
     "*.html"
   ], {
       base: "."
@@ -90,6 +103,10 @@ gulp.task("copy", function () {
 
 gulp.task("clean", function () {
   return del("build");
+});
+
+gulp.task("build", function (fn) {
+  run("clean", "copy", "style", "images", "symbols", "jsmin", fn);
 });
 
 gulp.task("deploy", function () {
